@@ -13,3 +13,4 @@
 # 4. Positive fake divergence
 # Dataset preparation
 # for dataset we will be using the trading view api or NSE(National Stock exchange dataset regarding the volume and the share)
+# I will be using the 30 min time frame this is solely based on my intuition
