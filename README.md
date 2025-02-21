@@ -7,8 +7,8 @@
 # What is volume?
 # Volume is just a measure of the transaction in that particular shares, let say that there is 1 share was sold and one was bought then the volume corresponding to this transaction is 1. Volunme is the count of unique transaction of shares, if there is transaction of 1M share means 1M shares are sold and bought.
 # Their are four thing to keep in mind 
-# 1. Positive conformend divergence
-# 2. Negative conformend divergence
+# 1. Positive confirmed divergence
+# 2. Negative confirmed divergence
 # 3. Negative fake divergence
 # 4. Positive fake divergence
 # Dataset preparation
