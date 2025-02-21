@@ -11,3 +11,5 @@
 # 2. Negative conformend divergence
 # 3. Negative fake divergence
 # 4. Positive fake divergence
+# Dataset preparation
+# for dataset we will be using the trading view api or NSE(National Stock exchange dataset regarding the volume and the share)
