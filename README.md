@@ -15,3 +15,9 @@
 # for dataset we will be using the trading view api or NSE(National Stock exchange dataset regarding the volume and the share)
 # I will be using the 30 min time frame this is solely based on my intuition
 # I am thinking to take volume candlestick pattern and support resistance be the input and to predict the next 3 candle
+# any candle has four thing
+# 1. Opening high
+# 2. best high
+# 3. least low
+# 4. ending low
+# depends on red green
