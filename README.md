@@ -21,3 +21,5 @@
 # 3. least low
 # 4. ending low
 # depends on red green
+# Dataset will consist of top 20 comanies of nifty50 index (india)
+# With 30 min interval
