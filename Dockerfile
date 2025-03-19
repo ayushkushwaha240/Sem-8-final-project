@@ -1,13 +1,20 @@
-FROM python:3.10.12
+FROM python:3.12.5-bookworm
+
+# Add user and set environment
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
 
 WORKDIR /app
 
-COPY ./requirements.txt /app/requirements.txt
-COPY ./main.py /app/main.py
+# Upgrade pip and install dependencies
+USER root
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r /app/requirements.txt
+COPY --chown=user ./requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
-EXPOSE 8000
+USER user
+COPY --chown=user . /app
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
