@@ -10,7 +10,6 @@ app = FastAPI()
 # Load the trained model and encoder
 model = torch.jit.load("stock_transformer_model.pt")  # Load your trained model
 model.eval()  # Set model to evaluation mode
-label_encoder = joblib.load("stock_label_encoder.pkl")
 
 def preprocess_data(file):
     """Read CSV and preprocess it."""
