@@ -1,7 +1,7 @@
 # Sem-8 Final Project  
 
 ## Project Overview  
-This is my final year project. I aim to develop a model based on volume divergence to predict the next high or low stock price.  
+This is my final year project. This project aims to incorporate the concept of volume divergence into a model to predict the next high or low stock price.  
 
 ## Understanding Volume Divergence  
 Volume divergence is a simple yet effective way to analyze investor interest. It helps us understand how **prices change** in response to shifts in **average volume**.  
