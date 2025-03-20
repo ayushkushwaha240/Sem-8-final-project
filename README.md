@@ -38,3 +38,4 @@ We will use **TradingView API** or **NSE dataset** for stock market data.
    ```bash
    git clone https://github.com/yourusername/Sem-8-Final-Project.git
    cd Sem-8-Final-Project
+"https://sem-8-final-project-83uanlndy4ehjvnn8nlrrn.streamlit.app/"
