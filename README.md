@@ -26,12 +26,13 @@ We will use **TradingView API** or **NSE dataset** for stock market data.
 - **Opening Price**
 - **Highest Price**
 - **Lowest Price**
-- **Closing Price**  
+- **Closing Price**
+- **Volume**
 
 ## Technologies Used  
 - **Python**  
-- **Pandas, NumPy, Scikit-learn, TensorFlow/PyTorch**  
-- **TradingView API / NSE dataset**  
+- **Pandas, NumPy, Scikit-learn, PyTorch, MLFlow, StreamLit, Docker, FastAPI**  
+- **TradingView API and NSE dataset**  
 
 ## Installation  
 1. Clone the repository:  
