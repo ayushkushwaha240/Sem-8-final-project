@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.interpolate import make_interp_spline
 
-BACKEND_URL = "http://127.0.0.1:8000/predict/"  # Change if backend is hosted elsewhere
+BACKEND_URL = "https://ayushkush2402-sem-8-project.hf.space/predict/"  # Change if backend is hosted elsewhere
 
 st.title("Stock Prediction with Volume Divergence")
 
