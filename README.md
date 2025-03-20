@@ -1,19 +1,19 @@
 # Sem-8 Final Project  
 
 ## Project Overview  
-This is my final year project. I aim to develop a model based on volume divergence to predict the next high or low in stock prices.
+This is my final year project. I aim to develop a model based on volume divergence to predict the next high or low stock price.  
 
 ## Understanding Volume Divergence  
-Volume divergence is a simple yet effective way to analyze investor interest. It helps us understand how prices change in response to shifts in average volume.  
+Volume divergence is a simple yet effective way to analyze investor interest. It helps us understand how **prices change** in response to shifts in **average volume**.  
 
 ### What is Volume?  
 Volume is a measure of stock transactions. If **1 share is bought and sold**, the volume count is **1**. If **1M shares are transacted**, the volume is **1M**.  
 
-### Types of Volume Divergence:
-1. **Positive Confirmed Divergence**
-2. **Negative Confirmed Divergence**
-3. **Negative Fake Divergence**
-4. **Positive Fake Divergence**
+### Types of Volume Divergence:  
+1. **Positive Confirmed Divergence**  
+2. **Negative Confirmed Divergence**  
+3. **Negative Fake Divergence**  
+4. **Positive Fake Divergence**  
 
 ## Dataset Preparation  
 We will use **TradingView API** or **NSE dataset** for stock market data.  
@@ -22,21 +22,34 @@ We will use **TradingView API** or **NSE dataset** for stock market data.
 - **Inputs:** Volume candlestick patterns, support, and resistance  
 - **Output:** Prediction of the **next 3 candlesticks**  
 
-### Candlestick Components:
-- **Opening Price**
-- **Highest Price**
-- **Lowest Price**
-- **Closing Price**
-- **Volume**
+### Candlestick Components:  
+- **Opening Price**  
+- **Highest Price**  
+- **Lowest Price**  
+- **Closing Price**  
+- **Volume**  
 
-## Technologies Used  
-- **Python**  
-- **Pandas, NumPy, Scikit-learn, PyTorch, MLFlow, StreamLit, Docker, FastAPI**  
-- **TradingView API and NSE dataset**  
+## Incorporating Volume Information  
+To analyze the role of volume in price movements, we experimented with three different approaches:  
 
-## Installation  
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/yourusername/Sem-8-Final-Project.git
-   cd Sem-8-Final-Project
-"https://sem-8-final-project-83uanlndy4ehjvnn8nlrrn.streamlit.app/"
+### 1. **Without Volume Information**  
+- The model was trained only on **closing prices** without considering the volume.  
+
+### 2. **Volume Stacking Method**  
+- The input sequence alternates between **close price** and **volume**:  
+  ```plaintext
+  close(t), volume(t), close(t+1), volume(t+1), ...
+### 3. **Volume Addition Method (Final Approach)**
+- Instead of treating volume separately, we normalized both close prices and volume and added them together:
+- input = normalized_close + normalized_volume
+- Result: After evaluating the models, the volume addition method achieved the lowest loss, making it the chosen approach for final predictions.
+
+## Tools Used
+- Python
+- Pandas, NumPy, Scikit-learn, PyTorch, MLflow, Streamlit, Docker, FastAPI
+- TradingView API and NSE dataset
+
+## Deployment
+The frontend is deployed on Streamlit and can be accessed here:
+https://sem-8-final-project-83uanlndy4ehjvnn8nlrrn.streamlit.app/
+
