@@ -53,3 +53,23 @@ To analyze the role of volume in price movements, we experimented with three dif
 The frontend is deployed on Streamlit and can be accessed here:
 https://sem-8-final-project-83uanlndy4ehjvnn8nlrrn.streamlit.app/
 
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/Sem-8-Final-Project.git
+   cd Sem-8-Final-Project
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+3. **Run the backend:**
+   ```bash
+   uvicorn app:main --reload
+4. **To run the frontend use:**
+   ```bash
+   streamlit run frontend.py
+
+**Note:**
+- Make sure about the directories in which the deployable files are
+
