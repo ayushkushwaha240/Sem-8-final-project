@@ -39,10 +39,10 @@ To analyze the role of volume in price movements, we experimented with three dif
 - The input sequence alternates between **close price** and **volume**:  
   ```plaintext
   close(t), volume(t), close(t+1), volume(t+1), ...
+- Result: After evaluating the models, the volume stacking method achieved the lowest loss, making it the chosen approach for better predictions.
 ### 3. **Volume Addition Method (Final Approach)**
 - Instead of treating volume separately, we normalized both close prices and volume and added them together:
 - input = normalized_close + normalized_volume
-- Result: After evaluating the models, the volume addition method achieved the lowest loss, making it the chosen approach for final predictions.
 
 ## Tools Used
 - Python
