@@ -7,7 +7,7 @@ from scipy.interpolate import make_interp_spline
 
 BACKEND_URL = "https://ayushkush2402-sem-8-project.hf.space/predict/"  # Change if backend is hosted elsewhere
 
-st.title("Stock Prediction with Volume Divergence")
+st.title("Stock Trend using Volume Divergence")
 
 uploaded_file = st.file_uploader("Upload CSV File", type=["csv"])
 
@@ -55,3 +55,5 @@ if uploaded_file is not None:
             st.error(f"Expected 11 values, but received {len(combined_values)}")
     else:
         st.error("Error in fetching predictions from backend")
+
+st.warning("⚠️ **Disclaimer:** This is a project for educational purposes only. Do not use it for real trading or investment decisions.")
