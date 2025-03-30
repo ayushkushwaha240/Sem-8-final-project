@@ -51,7 +51,7 @@ To analyze the role of volume in price movements, we experimented with three dif
 
 ## Deployment
 The frontend is deployed on Streamlit and can be accessed here:
-https://sem-8-final-project-83uanlndy4ehjvnn8nlrrn.streamlit.app/
+https://sem-8-final-project-tlwjbqqzreyqdrm5bzftq4.streamlit.app/
 
 ## Installation
 
