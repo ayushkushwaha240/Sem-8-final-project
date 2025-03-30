@@ -6,6 +6,7 @@ import numpy as np
 from scipy.interpolate import make_interp_spline
 
 BACKEND_URL = "https://ayushkush2402-sem-8-project.hf.space/predict/"  # Change if backend is hosted elsewhere
+# BACKEND_URL = "http://localhost:8000/predict/"
 
 st.title("Stock Trend using Volume Divergence")
 
@@ -21,38 +22,36 @@ if uploaded_file is not None:
     
     if response.status_code == 200:
         result = response.json()
-        combined_values = result["combined_values"]  # Expecting 11 values
+        combined_values = result["combined_values"]  # Expecting 9 values
         
-        if len(combined_values) == 11:
+        if len(combined_values) == 9:
             fig, ax = plt.subplots()
 
             # Original X values (time steps)
-            x_values = np.arange(11)
+            x_values = np.arange(1, 10)  # Start indexing from 1
 
-            # Stricter interpolation
-            x_smooth = np.linspace(x_values.min(), x_values.max(), 150)  # Reduced points for sharper curve
-            spl = make_interp_spline(x_values, combined_values, k=3)  # Lower degree for strictness
+            # Interpolation for smooth curve
+            x_smooth = np.linspace(x_values.min(), x_values.max(), 150)
+            spl = make_interp_spline(x_values, combined_values, k=3)
             y_smooth = spl(x_smooth)
 
-            # Shade the last 3 values' background with darker red
-            ax.axvspan(8, 10, color='#FF9999', alpha=0.4)  # Darker red background
+            # Shade the last value differently (Predicted Trend)
+            ax.axvspan(8.5, 9.5, color='#FF5733', alpha=0.5)  # Highlight last value in orange
 
-            # Add label inside the red background
-            ax.text(8.5, max(combined_values) * 0.9, "Predicted Trend", 
-                    fontsize=12, color='black', fontweight='bold')
-
-            # Plot strict curve
+            # Plot the curve
             ax.plot(x_smooth, y_smooth, color='blue', linewidth=2, label='Stock Values')
 
             # Labels and legend
             ax.set_xlabel("Time Steps")
             ax.set_ylabel("Normalized Values")
-            ax.set_title("Stock Prediction (Stricter Curve)")
+            ax.set_title("Stock Prediction (Highlighting Last Value)")
             ax.legend()
 
+            # Add label below the graph for predicted trend
             st.pyplot(fig)
+            st.markdown("### **The red region shows the predicted trend**", unsafe_allow_html=True)
         else:
-            st.error(f"Expected 11 values, but received {len(combined_values)}")
+            st.error(f"Expected 9 values, but received {len(combined_values)}")
     else:
         st.error("Error in fetching predictions from backend")
 
