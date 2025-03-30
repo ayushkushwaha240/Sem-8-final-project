@@ -72,5 +72,5 @@ https://sem-8-final-project-83uanlndy4ehjvnn8nlrrn.streamlit.app/
 
 **Note:**
 - Make sure about the directories in which the deployable files are
-- Also, the model which is used for deployment purposes is the model in which I used the volume addition approach.
+- This is a project for educational purposes only. Please do not use it for real trading or investment decisions.
 
